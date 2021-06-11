@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="ru.rutube.RutubePlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
+
+    <FrameLayout
+        android:id="@+id/headerPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#80000000" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/shadowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="Название ролика"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/controlPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:paddingTop="20dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:background="#80000000" />
+
+            <ImageButton
+                android:id="@+id/btnPrev"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="90dp"
+                android:layout_toStartOf="@+id/btnPlayOrPause"
+                android:background="@drawable/button_fill_backgtound"
+                android:src="@drawable/ic_prev" />
+
+            <ImageButton
+                android:id="@+id/btnPlayOrPause"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="90dp"
+                android:background="@drawable/button_fill_backgtound"
+                android:src="@drawable/ic_play" />
+
+            <ImageButton
+                android:id="@+id/btnNext"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="90dp"
+                android:layout_toEndOf="@id/btnPlayOrPause"
+                android:background="@drawable/button_fill_backgtound"
+                android:src="@drawable/ic_next" />
+
+            <ImageButton
+                android:id="@+id/btnQuality"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="90dp"
+                android:background="@drawable/button_fill_backgtound"
+                android:src="@drawable/ic_settings" />
+
+            <TextView
+                android:id="@+id/tvTimeCurrent"
+                style="@style/shadowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:paddingBottom="28dp"
+                android:text="00:00:00"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/endTime"
+                android:layout_toEndOf="@+id/tvTimeCurrent"
+                android:focusable="true"
+                android:paddingBottom="38dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/player_seek_bar_bg"
+                android:splitTrack="false"
+                android:thumb="@drawable/player_seek_bar_thumb" />
+
+            <TextView
+                android:id="@+id/endTime"
+                style="@style/shadowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="15dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="28dp"
+                android:text="00:00:00"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
